@@ -28,10 +28,18 @@ android {
 
     buildTypes {
         debug {
+            isDebuggable = true
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-g$commitHash"
+            defaultConfig {
+                manifestPlaceholders["testOnly"] = "true"
+            }
         }
         release {
+            isDebuggable = false
+            defaultConfig {
+                manifestPlaceholders["testOnly"] = "false"
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             if (!commitSubject.startsWith("[release]")) versionNameSuffix = "-g$commitHash"
