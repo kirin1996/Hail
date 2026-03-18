@@ -15,7 +15,7 @@ android {
         commandLine = "git log -1 --pretty=%s".split(" ")
     }.standardOutput.asText.get().trim()
 
-    namespace = "com.aistra.hail"
+    namespace = "com.aistra.hail1"
     compileSdk = 36
 
     defaultConfig {
